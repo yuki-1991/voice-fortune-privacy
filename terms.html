@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>利用規約 - VoiceFortune（こえうらない）</title>
+  <title>利用規約 / Terms of Service - VoiceFortune</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -60,65 +60,172 @@
       margin-right: 16px;
       font-size: 0.85rem;
     }
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      background: #1E1B30;
+      border-radius: 20px;
+      padding: 3px;
+      z-index: 10;
+    }
+    .lang-btn {
+      padding: 4px 14px;
+      border: none;
+      border-radius: 17px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: transparent;
+      color: #8B83A3;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: #7C3AED;
+      color: #fff;
+    }
+    [lang="en"] { display: none; }
+    body.en [lang="en"] { display: block; }
+    body.en [lang="ja"] { display: none; }
+    body.en ul[lang="en"], body.en li[lang="en"] { display: list-item; }
   </style>
 </head>
 <body>
-  <h1>利用規約</h1>
-  <p class="app-name">VoiceFortune（こえうらない）</p>
-
-  <h2>第1条（適用）</h2>
-  <p>本利用規約（以下「本規約」）は、モバイルアプリケーション「VoiceFortune（こえうらない）」（以下「本アプリ」）の利用に関する条件を定めるものです。本アプリを利用することにより、本規約に同意したものとみなします。</p>
-
-  <h2>第2条（サービス内容）</h2>
-  <p>本アプリは、ユーザーの声を録音・分析し、エンターテインメント目的の占い鑑定結果を提供するサービスです。</p>
-  <ul>
-    <li>本アプリが提供する占い結果は、エンターテインメントを目的としたものであり、科学的根拠に基づくものではありません。</li>
-    <li>本アプリの結果に基づいて重要な意思決定を行うことは推奨しません。</li>
-    <li>本アプリは医療、法律、金融等の専門的なアドバイスを提供するものではありません。</li>
-  </ul>
-
-  <h2>第3条（利用料金）</h2>
-  <p>本アプリは基本無料でご利用いただけます。一部機能はプレミアムプラン（有料サブスクリプション）に加入することでご利用いただけます。</p>
-  <ul>
-    <li>プレミアムプランの料金は、アプリ内の購入画面に表示されます。</li>
-    <li>サブスクリプションは自動更新されます。更新日の24時間前までにキャンセルしない限り、自動的に更新されます。</li>
-    <li>サブスクリプションの管理およびキャンセルは、端末の設定（App Store / Google Play）から行えます。</li>
-  </ul>
-
-  <h2>第4条（禁止事項）</h2>
-  <p>ユーザーは、以下の行為を行ってはならないものとします。</p>
-  <ul>
-    <li>本アプリの不正利用、リバースエンジニアリング、改ざん</li>
-    <li>他のユーザーまたは第三者の権利を侵害する行為</li>
-    <li>本アプリの運営を妨害する行為</li>
-    <li>法令に違反する行為</li>
-  </ul>
-
-  <h2>第5条（免責事項）</h2>
-  <ul>
-    <li>本アプリが提供する占い結果の正確性、有用性について、いかなる保証も行いません。</li>
-    <li>本アプリの利用により生じた損害について、当方は一切の責任を負いません。</li>
-    <li>本アプリの仕様変更、サービスの中断・終了について、事前の通知なく行う場合があります。</li>
-  </ul>
-
-  <h2>第6条（知的財産権）</h2>
-  <p>本アプリに関する著作権、商標権その他の知的財産権は、当方または正当な権利を有する第三者に帰属します。</p>
-
-  <h2>第7条（規約の変更）</h2>
-  <p>本規約は、必要に応じて変更されることがあります。変更後の規約は本ページに掲載した時点から効力を生じるものとします。</p>
-
-  <h2>第8条（準拠法・管轄裁判所）</h2>
-  <p>本規約は日本法に準拠し、日本法に従って解釈されるものとします。本規約に関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
-
-  <h2>第9条（お問い合わせ）</h2>
-  <p>本規約に関するお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
-  <p>メール：<a href="mailto:voicefortune.app@gmail.com">voicefortune.app@gmail.com</a></p>
-
-  <p class="updated">最終更新日：2026年3月9日</p>
-
-  <div class="nav">
-    <a href="./">プライバシーポリシー</a>
-    <a href="./tokushoho.html">特定商取引法に基づく表記</a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-ja" onclick="switchLang('ja')">日本語</button>
+    <button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
   </div>
+
+  <div lang="ja">
+    <h1>利用規約</h1>
+    <p class="app-name">VoiceFortune（こえうらない）</p>
+
+    <h2>第1条（適用）</h2>
+    <p>本利用規約（以下「本規約」）は、モバイルアプリケーション「VoiceFortune（こえうらない）」（以下「本アプリ」）の利用に関する条件を定めるものです。本アプリを利用することにより、本規約に同意したものとみなします。</p>
+
+    <h2>第2条（サービス内容）</h2>
+    <p>本アプリは、ユーザーの声を録音・分析し、エンターテインメント目的の占い鑑定結果を提供するサービスです。</p>
+    <ul>
+      <li>本アプリが提供する占い結果は、エンターテインメントを目的としたものであり、科学的根拠に基づくものではありません。</li>
+      <li>本アプリの結果に基づいて重要な意思決定を行うことは推奨しません。</li>
+      <li>本アプリは医療、法律、金融等の専門的なアドバイスを提供するものではありません。</li>
+    </ul>
+
+    <h2>第3条（利用料金）</h2>
+    <p>本アプリは基本無料でご利用いただけます。一部機能はプレミアムプラン（有料サブスクリプション）に加入することでご利用いただけます。</p>
+    <ul>
+      <li>プレミアムプランの料金は、アプリ内の購入画面に表示されます。</li>
+      <li>サブスクリプションは自動更新されます。更新日の24時間前までにキャンセルしない限り、自動的に更新されます。</li>
+      <li>サブスクリプションの管理およびキャンセルは、端末の設定（App Store / Google Play）から行えます。</li>
+    </ul>
+
+    <h2>第4条（禁止事項）</h2>
+    <p>ユーザーは、以下の行為を行ってはならないものとします。</p>
+    <ul>
+      <li>本アプリの不正利用、リバースエンジニアリング、改ざん</li>
+      <li>他のユーザーまたは第三者の権利を侵害する行為</li>
+      <li>本アプリの運営を妨害する行為</li>
+      <li>法令に違反する行為</li>
+    </ul>
+
+    <h2>第5条（免責事項）</h2>
+    <ul>
+      <li>本アプリが提供する占い結果の正確性、有用性について、いかなる保証も行いません。</li>
+      <li>本アプリの利用により生じた損害について、当方は一切の責任を負いません。</li>
+      <li>本アプリの仕様変更、サービスの中断・終了について、事前の通知なく行う場合があります。</li>
+    </ul>
+
+    <h2>第6条（知的財産権）</h2>
+    <p>本アプリに関する著作権、商標権その他の知的財産権は、当方または正当な権利を有する第三者に帰属します。</p>
+
+    <h2>第7条（規約の変更）</h2>
+    <p>本規約は、必要に応じて変更されることがあります。変更後の規約は本ページに掲載した時点から効力を生じるものとします。</p>
+
+    <h2>第8条（準拠法・管轄裁判所）</h2>
+    <p>本規約は日本法に準拠し、日本法に従って解釈されるものとします。本規約に関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+    <h2>第9条（お問い合わせ）</h2>
+    <p>本規約に関するお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
+    <p>メール：<a href="mailto:voicefortune.app@gmail.com">voicefortune.app@gmail.com</a></p>
+
+    <p class="updated">最終更新日：2026年3月9日</p>
+
+    <div class="nav">
+      <a href="./">プライバシーポリシー</a>
+      <a href="./tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+  </div>
+
+  <div lang="en">
+    <h1>Terms of Service</h1>
+    <p class="app-name">VoiceFortune</p>
+
+    <h2>Article 1 (Application)</h2>
+    <p>These Terms of Service (the "Terms") set forth the conditions for use of the mobile application "VoiceFortune" (the "App"). By using the App, you agree to these Terms.</p>
+
+    <h2>Article 2 (Service Description)</h2>
+    <p>The App records and analyzes the user's voice to provide entertainment-purpose fortune reading results.</p>
+    <ul>
+      <li>The fortune results provided by the App are for entertainment purposes only and are not based on scientific evidence.</li>
+      <li>We do not recommend making important decisions based on the App's results.</li>
+      <li>The App does not provide professional advice on medical, legal, financial, or other matters.</li>
+    </ul>
+
+    <h2>Article 3 (Fees)</h2>
+    <p>The App is free to use with basic features. Some features require a Premium Plan (paid subscription).</p>
+    <ul>
+      <li>Premium Plan pricing is displayed on the in-app purchase screen.</li>
+      <li>Subscriptions auto-renew. They will automatically renew unless cancelled at least 24 hours before the renewal date.</li>
+      <li>Subscription management and cancellation can be done through your device settings (App Store / Google Play).</li>
+    </ul>
+
+    <h2>Article 4 (Prohibited Activities)</h2>
+    <p>Users shall not engage in the following activities:</p>
+    <ul>
+      <li>Unauthorized use, reverse engineering, or modification of the App</li>
+      <li>Acts that infringe on the rights of other users or third parties</li>
+      <li>Acts that interfere with the operation of the App</li>
+      <li>Acts that violate laws or regulations</li>
+    </ul>
+
+    <h2>Article 5 (Disclaimer)</h2>
+    <ul>
+      <li>We make no warranties regarding the accuracy or usefulness of the fortune results provided by the App.</li>
+      <li>We assume no liability for any damages arising from the use of the App.</li>
+      <li>We may change specifications, suspend, or terminate the service without prior notice.</li>
+    </ul>
+
+    <h2>Article 6 (Intellectual Property)</h2>
+    <p>Copyrights, trademarks, and other intellectual property rights related to the App belong to us or authorized third parties.</p>
+
+    <h2>Article 7 (Changes to Terms)</h2>
+    <p>These Terms may be changed as needed. Revised Terms become effective when posted on this page.</p>
+
+    <h2>Article 8 (Governing Law and Jurisdiction)</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of Japan. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the Tokyo District Court as the court of first instance.</p>
+
+    <h2>Article 9 (Contact Us)</h2>
+    <p>For questions about these Terms, please contact us at the email address below.</p>
+    <p>Email: <a href="mailto:voicefortune.app@gmail.com">voicefortune.app@gmail.com</a></p>
+
+    <p class="updated">Last updated: March 9, 2026</p>
+
+    <div class="nav">
+      <a href="./">Privacy Policy</a>
+      <a href="./tokushoho.html">Commercial Transaction Act</a>
+    </div>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.body.className = lang === 'en' ? 'en' : '';
+      document.getElementById('btn-ja').className = 'lang-btn' + (lang === 'ja' ? ' active' : '');
+      document.getElementById('btn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+      localStorage.setItem('vf-lang', lang);
+    }
+    var saved = localStorage.getItem('vf-lang');
+    if (saved) switchLang(saved);
+  </script>
 </body>
 </html>
